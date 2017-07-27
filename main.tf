@@ -21,7 +21,7 @@ resource "aws_instance" "web1" {
   }
 
   # We run a remote provisioner on the instance after creating it.
-  user_data = "${file("./userdata.sh")}"
+  user_data = "${file("${path.module}/userdata.sh")}"
 
   #Instance tags
   tags {
